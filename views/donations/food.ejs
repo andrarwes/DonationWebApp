@@ -1,0 +1,35 @@
+<%- include('donation_partials/head') %> 
+<body>
+    <%- include('../partials/menu') %>
+    <h1>Toate alimentele donate:</h1>
+    <div class="container">
+        <% for(let article of articles){ %>
+           <ul><li>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="card-header"><h3><a href="/food/<%= article._id %> "><%= article.title %></a></h3></div>
+                <div class="row g-0">
+                  <div class="col-md-6 ">
+                    <p class="card-text"><p><h4>Descriere:</h4></p><h5 class="card-text"> <%= article.description %></h5></p>
+                </div>
+             
+            <div class="col-md-12">
+            <% article.images.forEach((img,i)=>{ %>
+                    <div data-target="#imageCarousel" class="<%= i === 0 ? 'active': '' %>"></div>
+                    <% }) %>
+            
+            <div class="carousel-inner">
+                  <% article.images.forEach((img,i)=>{ %>
+                    <div class="item <%= i === 0 ? 'active': '' %>">
+                      <img style="margin: auto;" class="card-img-top" src="<%= img.url%>" alt="">
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+            </div>
+            </div> </li></ul>    
+        <% } %> 
+        </div>
+    <a href="/makefooddonation">Doneaza alimente neperisabile aici</a>
+    <p><a href="/donationpage">Inapoi la pagina de donatii</a></p>
+</body>
+</html>

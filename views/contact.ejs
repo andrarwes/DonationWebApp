@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <% include partials/head %> 
+</head>
+<body>
+<% include partials/menu %>
+
+<section> 
+  <div class="container-fluid bg-3 text-center"> 
+    <h3><%= page %></h3><br>
+    <div class="row">
+  <div class="col-sm-4">
+      <h4>Trimite-ne un mesaj!</h4>
+      <p>Daca doresti sa cunosti mai multe detalii despre proiectele noastre sau vrei sa ne adresezi o intrebare, ne poti contacta completand formularul nostru: </p>
+      <form  action="/contact" class="contact-form"  method="POST">
+          <div class="form-group">
+              <input type="text" id="name" name="message[name]" class="form-control" placeholder="Nume" required>
+          </div>
+          <div class="form-group">
+              <input type="email" id="email" name="message[email]" class="form-control" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+              <textarea id="description" name="message[description]" class="form-control" rows="4" placeholder="Message">
+              </textarea>
+          </div>
+          <button type="submit" >Trimite Mesaj</button>
+      </form>
+          </div> 
+          <div class="col-sm-6">
+            <h4 >Unde ne poti gasi:</h4><br>
+            <p><i class="fas fa-map-marker-alt"></i> Locatie: Valcea, Oras Berbesti, Strada Dealul Alunis</p>
+            <p><i class="fa fa-phone" aria-hidden="true"></i> Telefon: (+40)757803548</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i> Email: donatii_online@gmail.com</p>
+            <p><b>Sau pe mail-ul personal:</b> andra.ebinca@gmail.com</p><br>
+          <h4>Social media</h4>
+           <p style="text-align: center;">
+                <a href="https://www.instagram.com/andraebinca/"><i class="fab fa-instagram fa-3x"></i></a>
+                <a href="https://www.facebook.com/andra.ebinca"><i class="fab fa-facebook-square fa-3x"></i></a>
+                <a href="https://www.linkedin.com/in/andra-ebinca-1267071a6/"><i class="fab fa-linkedin fa-3x"></i></a>
+              
+            </p>
+          </div>
+ 
+      <div class="col-sm-4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45136.05449078076!2d23.843635937136227!3d45.00455273670558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474d7b3748afc06d%3A0xbd543cccc40507c4!2zQmVyYmXImXRp!5e0!3m2!1sen!2sro!4v1619382795961!5m2!1sen!2sro" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" loading="lazy"></iframe>
+      </div>
+   
+    
+         
+</div>
+</div>
+</section>
+</body>
+<% include partials/script %>
+</html>

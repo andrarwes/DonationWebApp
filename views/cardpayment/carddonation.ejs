@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+    <link rel="stylesheet" href="./stylesheets/cardstyle.css">
+    <link rel="icon" href="/images/favicon.ico" />
+    <title>Formular de plata</title>
+
+</head>
+
+     
+<body>
+    
+<div class="wrapper">
+  <div class="payment">
+   
+    
+    <h2>Formular donatie</h2>
+    <div class="form-content">
+    <form action="/charge" method="POST" >
+      <div class="card space icon-relative">
+        <label class="label">Detinator card:</label>
+        <input type="text" class="input"  name="name" placeholder="Nume detinator card" required>
+        <i class="fas fa-user"></i>
+      </div>
+
+      <div class="card space icon-relative">
+        <label class="label">Suma:</label>
+        <input type="number" class="input"  name="amount" placeholder="Suma donata" required>
+        <i class="fas fa-money-bill-wave"></i>
+      </div>
+
+      <div class="card space icon-relative">
+        <label class="label">Email:</label>
+        <input type="email" class="input"  name="email" placeholder="Adresa de mail" required>
+        <i class="fas fa-address-book"></i>
+      </div>
+
+      <label class="label">Numarul cardului:</label>
+      <div class="container">
+          <div  class="card space icon-relative">
+          <div id="card-number"></div>
+      </div>
+      </div>
+        
+     
+      <label class="label">Data de expirare:</label>
+      <div class="container-exp">
+        <div  class="card-item icon-relative">
+          
+          <div id="card-expiry"> </div>
+        </div></div>
+
+
+        <label class="label">CVV:</label>
+        <div class="container-cvc">
+        <div  class="card-item icon-relative">
+          
+          <div id="card-cvc"></div>
+        </div>
+      </div>
+      <div id="card-errors" role="alert"></div>
+
+
+      <br>
+        <button class="btn" >Trimite donatia</button>
+     
+      </form>
+     
+      
+    </div>
+  </div>
+</div>
+
+
+</body>
+<script src="https://js.stripe.com/v3/"></script>
+  <script src="./cardpayment/creditcardpayment.js"></script>
+</html>
